@@ -1,0 +1,1 @@
+# Fortune Telling App Brainstorm #1

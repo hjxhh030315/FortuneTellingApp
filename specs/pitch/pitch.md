@@ -1,0 +1,1 @@
+# Markdown file for the Fortune Telling App pitch
