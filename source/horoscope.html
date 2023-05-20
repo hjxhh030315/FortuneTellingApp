@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    
 </head>
 <body>
     <div class="header">
@@ -9,12 +10,27 @@
     </div>
 
     <div class="sign">
-        <h2>Person's Name</h2>
-        <h2>Person's Birthday</h2>
-        <h2>Sign Name</h2>
+        <h1>Questionnaire Page</h1>
+        <section id="questionnaire">
+        <!-- We probably don't want to use html due to it looking kinda ugly -->
+        <form id="horoscopeForm">
+            <fieldset>
+            <!-- Add effects that text appear itself -->
+            <label for="fname">"Speak thy name and unleash the horrors that lie within": </label>
+            <input type="text" id="fname" name="fname" style="border-radius: 0; margin: 0;"><br><br>
+            <!-- We may want to check for name inputs (Only alaphabets and such) -->
+            <label for="birthday"> "Summon forth the cursed knowledge of thy birth date":</label>
+            <input type="date" id="birthday" name="birthday">
+            </fieldset>
+            <button type="submit" id="submitButton">SEE YOUR FATE</button>
+        </form>
+        <output id="horoscopeOutput">something random for now</output>
+        <!-- This is a comment in HTML 
         <img src="sign-image-url" alt="Sign Image">
+        -->
     </div> 
 
     <button href="horoscope.html" class="back">Back</button>
+    <script src="horoscope.js"></script>
 </body>
 </html>
