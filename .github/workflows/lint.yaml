@@ -5,10 +5,12 @@ on:
   # but only for the main branch
   push:
     branches:
-      - 'lint-action'
+      - 'prod'
+      - 'main'
   pull_request:
     branches:
       - 'prod'
+      - 'main'
 
 jobs:
   run-linters:
