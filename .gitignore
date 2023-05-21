@@ -3,4 +3,4 @@ source/.github/workflows/github-actions-horoscope-output.yml
 node_modules
 .DS_Store
 package-lock.json
-package.json
+
