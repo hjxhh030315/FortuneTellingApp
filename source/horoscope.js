@@ -19,7 +19,7 @@ async function init(){
     }
     catch(error){
         console.error(error);
-        return 1;
+        return 0;
     }
 }
 function exampleTest(num){
