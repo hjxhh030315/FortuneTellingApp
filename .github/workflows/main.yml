@@ -3,10 +3,10 @@ name: Unit Tests
 on:
   push:
     branches:
-      - HoroscopeDisplay-Add-to-me
+      - prod
     
-  #pull_request:
-    #branches: [master]
+  pull_request:
+    branches: [prod]
 
 jobs:
   Jest:

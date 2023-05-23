@@ -3,7 +3,7 @@ test('return the input', () => {
    expect(simpleReturn(5)).toBe(5);
 });
 
-const horoscopeTest = require('./source/horoscope');
+const horoscopeTest = require('./source/HoroscopeDisplay/horoscope');
 test('return exit code 1 if success', () => {
     expect(horoscopeTest(1)).toBe(1);
 });
