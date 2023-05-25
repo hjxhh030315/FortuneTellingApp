@@ -10,19 +10,35 @@
   <main>  
     <h1>Questionnaire Page</h1>
     <section id="questionnaire">
-      <!-- We probably don't want to use html due to it looking kinda ugly -->
-      <form action="./Questionnaire.html">
-        <fieldset>
-          <!-- Add effects that text appear itself -->
-          <label for="fname">"Speak thy name and unleash the horrors that lie within": </label>
-          <input type="text" id="fname" name="fname" style="border-radius: 0; margin: 0;"><br><br>
-          <!-- We may want to check for name inputs (Only alaphabets and such) -->
-          <label for="birthday"> "Summon forth the cursed knowledge of thy birth date":</label>
-          <input type="date" id="birthday" name="birthday">
-        </fieldset>
-      </form><br>
-      <button id="exitButton">Exit</button>
+      <template>
+        <section id="question">
+          <form action="./Questionnaire.html">
+            <fieldset>
+              <!-- Add effects that text appear itself -->
+              <label for="fname">"Speak thy name and unleash the horrors that lie within": </label>
+              <input type="text" id="fname" name="fname" style="border-radius: 0; margin: 0;"><br><br>
+              <!-- We may want to check for name inputs (Only alaphabets and such) -->
+              <label for="birthday"> "Summon forth the cursed knowledge of thy birth date":</label>
+              <input type="date" id="birthday" name="birthday">
+            </fieldset>
+          </form><br>
+        </section>
+      </template>
+      <template>
+        <section id="question">
+          <form action="./Questionnaire.html">
+            <fieldset>
+              <label for="Memes1">"What do you wish to know?": </label>
+              <input type="text" id="Memes1" name="Memes1" style="border-radius: 0; margin: 0;"><br><br>
+              <!-- We may want to check for name inputs (Only alaphabets and such) -->
+              <label for="Memes2"> "They sleep above":</label>
+              <input type="text" id="Memes2" name="Memes2" style="border-radius: 0; margin: 0;"><br><br>
+            </fieldset>
+          </form><br>
+        </section>
+      </template>
     </section>
+    <button id="exitButton">Button (Replace to be absolute pos)</button>
   </main>
   <footer>
 
