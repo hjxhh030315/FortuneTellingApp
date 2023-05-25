@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 1.5rem;
+}
+
+.page-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2vw; */
+
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    padding: 20px;
+    flex-basis: 30%;
+    text-align: center;
+    height: 700px;
+    width: 1300px;
+
+    margin-top: 40px;
+    font-family: 'Kalam', cursive;
+}
+
+.subtitle {
+    font-family: 'Satisfy', cursive;
+}
+
+#submitButton {
+    font-family: 'Kalam', cursive;
+    margin-top: 50px;
+}
+
+.page {
+    width: 640px;
+    height: 680px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-width: 2px;
+    background-color: #fff;
+}
+
+#horoscopeOutput {
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#horoscopeForm {
+    margin-top: 150px;
+}
+
+.back {
+    margin-right: 30px;
+    position: fixed;
+    top: 86%;
+    left: 83%;
+}
