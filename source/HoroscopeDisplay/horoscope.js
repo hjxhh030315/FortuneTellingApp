@@ -1,7 +1,6 @@
 //const sanitizer = new Sanitizer();
 
 var birthday;
-var IndividualName;
 var horoscopeArray;
 var submitButton;
 
@@ -9,12 +8,15 @@ window.addEventListener("load", init);
 async function init(){
     try{
         horoscopeArray = await fetch('horoscope.json');
-        console.log(horoscopeArray);
         horoscopeArray = await horoscopeArray.json();
         horoscopeArray = horoscopeArray['data'];
-        console.log(horoscopeArray);
         submitButton = document.getElementById("submitButton");
         submitButton.addEventListener("click", outputHoroscope);
+
+        //set birthday and name for testing purposes
+        localStorage.setItem("UserName", 'nikan');
+        localStorage.setItem("Birthday", '02/02/2001');
+        console.log(localStorage);
         return 1;
     }
     catch(error){
@@ -32,12 +34,12 @@ function exampleTest(num){
 function outputHoroscope() {
     event.preventDefault();
     console.log("output");
-    individualName = document.getElementById("fname").value;
-    birthday = document.getElementById('birthday').value;
 
-    //individualName = sanitizer.sanitize(individualName);
-    //birthday = sanitizer.sanitize(birthday);
-    birthday = new Date(birthday);
+
+    let localBirthday = localStorage.getItem('Birthday');
+    console.log(localStorage);
+    console.log(localBirthday);
+    birthday = new Date(localBirthday);
 
     // Create a new Date object
     let todayDate = new Date();
@@ -48,19 +50,11 @@ function outputHoroscope() {
     let hashValue = (todayDay+birthdayMonth)%12;
     console.log(hashValue);
 
-    /*
-    // Check if name, birthday, or both is missing
-    if (individualName == ''){
-        alert("Speak thy name");
-    }
-    else if(birthday.replace(/\s+/g, '') == ''){
-        alert("Enter thy birth date");
-    }
-    */
+   
     
-        let horoscopeOutput = document.getElementById('horoscopeOutput');
-        console.log(horoscopeArray[hashValue]['horoscope']);
-        horoscopeOutput.innerHTML=`${horoscopeArray[hashValue]['horoscope']}`;  
+    let horoscopeOutput = document.getElementById('horoscopeOutput');
+    console.log(horoscopeArray[hashValue]['horoscope']);
+    horoscopeOutput.innerHTML=`${horoscopeArray[hashValue]['horoscope']}`;  
     
 } 
 
