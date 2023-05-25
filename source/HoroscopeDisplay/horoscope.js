@@ -10,13 +10,12 @@ async function init(){
         horoscopeArray = await fetch('horoscope.json');
         horoscopeArray = await horoscopeArray.json();
         horoscopeArray = horoscopeArray['data'];
-        submitButton = document.getElementById("submitButton");
-        submitButton.addEventListener("click", outputHoroscope);
+        //submitButton = document.getElementById("submitButton");
 
         //set birthday and name for testing purposes
         localStorage.setItem("UserName", 'nikan');
-        localStorage.setItem("Birthday", '02/02/2001');
-        console.log(localStorage);
+        localStorage.setItem("Birthday", '02/03/2005');
+        outputHoroscope();
         return 1;
     }
     catch(error){
@@ -32,14 +31,13 @@ function exampleTest(num){
  * will be outputted to the user 
  */
 function outputHoroscope() {
-    event.preventDefault();
+    //event.preventDefault();
     console.log("output");
 
-
-    let localBirthday = localStorage.getItem('Birthday');
-    console.log(localStorage);
-    console.log(localBirthday);
-    birthday = new Date(localBirthday);
+    //get birthday and name from local storage
+    let customerBirthday = localStorage.getItem('Birthday');
+    let customerName = localStorage.getItem('UserName');
+    birthday = new Date(customerBirthday);
 
     // Create a new Date object
     let todayDate = new Date();
@@ -53,7 +51,14 @@ function outputHoroscope() {
    
     
     let horoscopeOutput = document.getElementById('horoscopeOutput');
+    let nameOutput = document.getElementById('fname');
+    let birthdayOutput = document.getElementById('birthday');
+    let zodiacOutput = document.getElementById('zodiacSign');
+    nameOutput.innerHTML = customerName;
+    birthdayOutput.innerHTML = customerBirthday;
+    zodiacOutput.innerHTML = horoscopeArray[birthdayMonth]['sign'];
     console.log(horoscopeArray[hashValue]['horoscope']);
+    console.log(horoscopeArray[birthdayMonth]['sign']);
     horoscopeOutput.innerHTML=`${horoscopeArray[hashValue]['horoscope']}`;  
     
 } 
