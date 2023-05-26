@@ -91,8 +91,8 @@ exitButton.addEventListener("click", ()=>{
   }else
   {
     //Moves to next page (Currently submit is used to call window.onbeforeunload)
-    window.location.href = "test.html";
-    console.log("Exitting page");
+    window.location.href = "../HoroscopeDisplay/horoscope.html";
+    console.log("Exiting page");
   }
 })
 
