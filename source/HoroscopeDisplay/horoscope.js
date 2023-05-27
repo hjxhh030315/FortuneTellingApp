@@ -7,7 +7,7 @@ var submitButton;
 window.addEventListener("load", init);
 async function init(){
     try{
-        horoscopeArray = await fetch('/source/HoroscopeDisplay/horoscope.JSON');
+        horoscopeArray = await fetch('./horoscope.JSON');
         horoscopeArray = await horoscopeArray.json();
         horoscopeArray = horoscopeArray['data'];
         //submitButton = document.getElementById("submitButton");
