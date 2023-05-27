@@ -13,8 +13,7 @@ async function init(){
         //submitButton = document.getElementById("submitButton");
 
         //set birthday and name for testing purposes
-        localStorage.setItem("UserName", 'nikan');
-        localStorage.setItem("Birthday", '02/03/2005');
+        console.log(localStorage.getItem('UserName'));
         outputHoroscope();
         return 1;
     }
