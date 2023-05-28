@@ -6,7 +6,7 @@ let userName = "";
 let birthday = "";
 let templateNum = 0;
 let currentQuestion;  
-let totalNumQuestions = 2;  //Counting starting from 0
+let totalNumQuestions = 1;  //Counting starting from 0
 
 window.addEventListener('DOMContentLoaded', init);
 
