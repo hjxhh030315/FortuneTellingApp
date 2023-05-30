@@ -26,9 +26,10 @@ async function init(){
 function exampleTest(num){
     return num;
 }
-/*
- * Based on the input name and birthday, a horoscope reading
- * will be outputted to the user 
+/**
+ * Based on the input name and birthday, a horoscope reading will be outputted to the user
+ * @tutorial horoscope-tutorial
+ * @class Horoscope
  */
 function outputHoroscope() {
     //event.preventDefault();
@@ -47,8 +48,6 @@ function outputHoroscope() {
     let birthdayMonth = birthday.getMonth();
     let hashValue = (todayDay+birthdayMonth)%12;
     console.log(hashValue);
-
-   
     
     let horoscopeOutput = document.getElementById('horoscopeOutput');
     let nameOutput = document.getElementById('fname');
@@ -59,9 +58,8 @@ function outputHoroscope() {
     zodiacOutput.innerHTML = horoscopeArray[birthdayMonth]['sign'];
     console.log(horoscopeArray[hashValue]['horoscope']);
     console.log(horoscopeArray[birthdayMonth]['sign']);
-    horoscopeOutput.innerHTML=`${horoscopeArray[hashValue]['horoscope']}`;  
-    
-} 
+    horoscopeOutput.innerHTML=`${horoscopeArray[hashValue]['horoscope']}`;    
+}
 
 //console.log(submitButton);
 module.exports = exampleTest;
