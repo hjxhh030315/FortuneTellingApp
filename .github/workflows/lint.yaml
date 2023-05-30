@@ -28,6 +28,13 @@ jobs:
           
       - name: JSDoc Action
         uses: andstor/jsdoc-action@v1.2.1
+        
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./source
+          recurse: true
+          output_dir: ./out
 
       # ESLint and Prettier must be in `package.json`
       - name: Install Node.js dependencies
