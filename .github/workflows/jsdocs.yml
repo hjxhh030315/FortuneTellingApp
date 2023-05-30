@@ -6,4 +6,4 @@
   with:
     source_dir: ./source
     recurse: true
-    output_dir: ./out
+    output_dir: ./docs
