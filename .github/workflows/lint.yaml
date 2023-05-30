@@ -25,13 +25,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          
+      - name: JSDoc Action
+        uses: andstor/jsdoc-action@v1.2.1
 
       # ESLint and Prettier must be in `package.json`
       - name: Install Node.js dependencies
         run: |
           npm install 
           npm ci
-        
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
