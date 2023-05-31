@@ -5,16 +5,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
 
     - name: Build
-      uses: andstor/jsdoc-action@v1
+      uses: andstor/jsdoc-action@v3
       with:
         source_dir: ./source
         recurse: true
         output_dir: ./docs
+        front_page: README.md
+        template: clean-jsdoc-theme
+    
+    - name: Commit Docs
+      uses: EndBug/add-and-commit@v9
+      with:
+        auhor_name: Github Actions
+        author_email: noreply@github.com
+        message: 'CI: Automated JSDocs build push'
+        add: 'docs/*'
 
-    # - name: Commit files
     #   run: |
     #     echo ${{ github.ref }}
     #     git add ./docs
