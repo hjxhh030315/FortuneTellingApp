@@ -1,0 +1,22 @@
+{
+  "name": "fortunetellingapp",
+  "version": "1.0.0",
+  "description": "This is the main repo for the Byte Brokers - Team 22 in CSE110 SP23 @ UCSD.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "2.8.8"
+  },
+  "jest":{
+    "testEnvironment": "jsdom"
+  }
+}
