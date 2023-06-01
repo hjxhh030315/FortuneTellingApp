@@ -1,4 +1,4 @@
-import { JSDOM } from 'jsdom';
+//import { JSDOM } from 'jsdom';
 
 //setup for JSDOM
 const { window } = new JSDOM('<!doctype html><html><body><div id="exitButton"></div><template></template><div id="questionnaire"></div></body></html>');
@@ -6,9 +6,12 @@ global.window = window;
 global.document = window.document;
 global.localStorage = window.localStorage;
 
-import * as myModule from './myModule.js';
+//import * as Questionnaire from './Questionnaire.js';
+const { JSDOM } = require('jsdom');
+const Questionnaire = require('./Questionnaire.js');
 
-describe('myModule', () => {
+
+describe('Questionnaire', () => {
     beforeEach(() => {
         // Reset the DOM and localStorage before each test
         while (document.body.firstChild) {
@@ -21,7 +24,7 @@ describe('myModule', () => {
     });
 
     test('parseNumbers function', () => {
-        expect(myModule.parseNumbers("John123")).toBe("John");
+        expect(Questionnaire.parseNumbers("John123")).toBe("John");
     });
 
     test('initNameBirth function', () => {
@@ -33,7 +36,7 @@ describe('myModule', () => {
         document.body.appendChild(template.content.cloneNode(true));
 
         // Call the init function which indirectly calls initNameBirth
-        myModule.init();
+        Questionnaire.init();
 
         const nameInput = document.getElementById('fname');
         const birthdayInput = document.getElementById('birthday');
@@ -52,7 +55,7 @@ describe('myModule', () => {
         document.body.appendChild(template);
 
         // Call showContent
-        myModule.showContent(0);
+        Questionnaire.showContent(0);
 
         // Expect the template's content to have been cloned into the questionnaire div
         expect(document.getElementById('questionnaire').innerHTML).toContain('Test Template');
@@ -60,8 +63,8 @@ describe('myModule', () => {
 
     test('window.onbeforeunload function', () => {
         // Assuming that you export the userName and birthday variables from myModule
-        myModule.userName = 'John';
-        myModule.birthday = '2000-01-01';
+        Questionnaire.userName = 'John';
+        Questionnaire.birthday = '2000-01-01';
 
         window.onbeforeunload();
 
